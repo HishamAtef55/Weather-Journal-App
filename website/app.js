@@ -12,9 +12,9 @@ let d = new Date();
 
  function performAction(e){
     let zipCode = document.getElementById('zip').value;
-    const newFeeling = document.getElementById('feelings').value;
-    const errorZipCode = document.getElementById('errorzip');
-    const errorFeelings =  document.getElementById('errorfeelings')
+    let newFeeling = document.getElementById('feelings').value;
+    let errorZipCode = document.getElementById('errorzip');
+    let errorFeelings =  document.getElementById('errorfeelings')
     if(!zipCode){
         errorZipCode.innerHTML = 'zipCode is required'
     }
