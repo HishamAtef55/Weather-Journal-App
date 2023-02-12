@@ -4,8 +4,8 @@ let d = new Date();
  let newDate = d.getMonth()+1+'.'+ d.getDate()+'.'+ d.getFullYear();
 // Personal API Key for OpenWeatherMap API
 
- let baseURL = 'http://api.openweathermap.org/data/2.5/weather?zip='
- let apiKey = ',&appid=4575cd29b5551266626c6aa0c5c7c08b&units=metric';
+ const baseURL = 'http://api.openweathermap.org/data/2.5/weather?zip='
+ const apiKey = ',&appid=4575cd29b5551266626c6aa0c5c7c08b&units=metric';
  
  const generate = document.getElementById('generate');
  generate.addEventListener('click',performAction);
@@ -23,6 +23,7 @@ let d = new Date();
     }else{
         getWeather(baseURL,zipCode,apiKey)
         .then(function(weatherData){
+           updataUI('/all')
            postData('/addData',
            {
             data:  newDate,
@@ -30,7 +31,7 @@ let d = new Date();
             feeling: newFeeling
            })
         })
-        updataUI('/all')
+        
     }
     
  }
